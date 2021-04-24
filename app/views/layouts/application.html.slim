@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title Флэшкарточкер
+    title = t("title")
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -10,12 +10,12 @@ html
   body
     section id="container"
       header class="clearfix"
-        h1 Флэшкарточкер
+        h1 =t("title")
         ul class="navigation-links"
           li 
-            a href="#" Все карточки
+            a href="#" =t("all_cards")
           li 
-            a href="#" Добавить карточку
+            a href="#" =t("add_card")
       
       section
         = yield
