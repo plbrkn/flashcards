@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title = t("title")
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  
+  body
+    section id="container"
+      header class="clearfix"
+        h1 =t("title")
+        ul class="navigation-links"
+          li 
+            a href="#" =t("all_cards")
+          li 
+            a href="#" =t("add_card")
+      
+      section
+        = yield
