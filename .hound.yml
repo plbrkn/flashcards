@@ -1,0 +1,5 @@
+rubocop:
+  config_file: .rubocop.yml
+
+slim-lint:
+  version: 0.15.0
