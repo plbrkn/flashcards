@@ -1,22 +1,22 @@
 doctype html
 html
   head
-    title = t("home.title")
+    title = t('home.title')
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-    = stylesheet_pack_tag "application", 'data-turbo-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbo-track': 'reload'
   
   body
-    section id="container"
-      header class="clearfix"
-        h1 =t("home.title")
-        ul class="navigation-links"
+    section id='container'
+      header class='clearfix'
+        h1 =t('home.title')
+        ul class='navigation-links'
           li 
-            a href="/cards" =t("all_cards")
+            a href='/cards' =t('all_cards')
           li 
-            a href="#" =t("add_card")
+            a href='#' =t('add_card')
       
       section
         = yield
