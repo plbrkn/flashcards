@@ -3,7 +3,6 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: <%= ENV.fetch("DB_USER_NAME") { 'user_db' } %>
 
 development:
   <<: *default
@@ -11,7 +10,7 @@ development:
 
 test:
   <<: *default
-  database: flashcards_db
+  database: test_flashcards_db
 
 production:
   <<: *default

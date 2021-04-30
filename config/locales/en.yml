@@ -1,5 +1,10 @@
 en:
-  title: Flashcards
-  welcome: The world's first handy flash card manager. Exactly.
-  all_cards: All cards
-  add_card: Add card
+  home:
+    title: Flashcards
+    welcome: The world's first handy flash card manager. Exactly.
+    all_cards: All cards
+    add_card: Add card
+  cards:
+    original_text: Original text
+    translated_text: Translated text
+    review_date: Review date

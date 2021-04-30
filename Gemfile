@@ -14,10 +14,13 @@ gem 'sass-rails', '>= 6'
 gem 'slim', '~> 4.1'
 gem 'turbolinks', '~> 5'
 gem 'webpacker', '~> 4.0'
+gem 'simple_form'
+
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 5.0'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -33,7 +36,10 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'tailwindcss-rails', '~> 0.3.3'

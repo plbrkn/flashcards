@@ -77,6 +77,11 @@ GEM
     crass (1.0.6)
     diff-lcs (1.4.4)
     erubi (1.10.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     ffi (1.15.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -195,6 +200,11 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     slim (4.1.0)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 2.0.6, < 2.1)
@@ -209,6 +219,8 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    tailwindcss-rails (0.3.3)
+      rails (>= 6.0.0)
     temple (0.8.2)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -246,6 +258,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
+  factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (~> 1.2)
@@ -256,9 +269,12 @@ DEPENDENCIES
   rubocop-rails
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers (~> 4.0)
+  simple_form
   slim (~> 4.1)
   spring
   spring-watcher-listen (~> 2.0.0)
+  tailwindcss-rails (~> 0.3.3)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
