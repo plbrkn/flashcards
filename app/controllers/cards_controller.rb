@@ -19,8 +19,10 @@ class CardsController < ApplicationController
 
     if @card.save
       redirect_to @card
+      flash.now[:notice] = t('cards.notice.create')
     else
       render :new
+      flash.now[:warning] = t('cards.errors.fail')
     end
   end
 
@@ -29,15 +31,17 @@ class CardsController < ApplicationController
   def update
     if @card.update(card_params)
       redirect_to @card
+      flash.now[:notice] = t('cards.notice.update')
     else
       render :edit
+      flash.now[:warning] = t('cards.notice.fail')
     end
   end
 
   def destroy
     @card.destroy
-
     redirect_to cards_path
+    flash[:notice] = t('cards.notice.destroy')
   end
 
   private
