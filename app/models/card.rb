@@ -14,8 +14,4 @@ class Card < ApplicationRecord
                  I18n.t('cards.errors.unique'))
     end
   end
-
-  before_validation do
-    self.review_date = Time.current + 3.days
-  end
 end

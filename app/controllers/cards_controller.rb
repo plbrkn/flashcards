@@ -15,8 +15,7 @@ class CardsController < ApplicationController
   end
 
   def create
-    @card = Card.new(card_params)
-
+    @card = Card.new(CardsService.call(card_params))
     if @card.save
       redirect_to @card
       flash.now[:notice] = t('cards.notice.create')
@@ -29,7 +28,7 @@ class CardsController < ApplicationController
   def edit; end
 
   def update
-    if @card.update(card_params)
+    if @card.update(CardsService.call(card_params))
       redirect_to @card
       flash.now[:notice] = t('cards.notice.update')
     else
