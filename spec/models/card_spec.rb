@@ -25,6 +25,4 @@ RSpec.describe Card, type: :model do
         .is_at_least(1).is_at_most(128)
     }
   end
-
-  after(:all) { Card.destroy_all }
 end
