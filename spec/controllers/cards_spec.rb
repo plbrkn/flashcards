@@ -30,9 +30,17 @@ RSpec.describe CardsController, type: :controller do
     it 'create valid card' do
       expect do
         post :create,
-             params: { card: { original_text: card.original_text,
-                               translated_text: card.translated_text } }
-      end.to change(Card, :count).by(2)
+             params: { card: { original_text: 'asd',
+                               translated_text: 'asdd' } }
+      end.to change(Card, :count).by(1)
+    end
+
+    it 'create invalid card' do
+      expect do
+        post :create,
+             params: { card: { original_text: 'asd',
+                               translated_text: 'asd' } }
+      end.to_not change(Card, :count)
     end
   end
 
@@ -47,12 +55,21 @@ RSpec.describe CardsController, type: :controller do
     let(:update_card) do
       { original_text: 'boo', translated_text: 'foo' }
     end
+    let(:invalid_update_card) do
+      { original_text: 'boo', translated_text: 'boo' }
+    end
 
     it 'update card' do
       put :update, params: { id: card.id, card: update_card }
       card.reload
       expect(card.original_text).to eq update_card[:original_text]
       expect(card.translated_text).to eq update_card[:translated_text]
+    end
+
+    it 'invalid card' do
+      put :update, params: { id: card.id, card: invalid_update_card }
+      card.reload
+      expect(card).to eq card
     end
   end
 
