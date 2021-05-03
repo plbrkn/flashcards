@@ -8,7 +8,7 @@ RSpec.describe Card, type: :model do
   end
 
   it 'create invalid card' do
-    expect(build(:card, original_text: nil).save).to eq false
+    expect(build(:card, :invalid_card).save).to eq false
   end
 
   describe 'validations' do

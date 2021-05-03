@@ -8,3 +8,12 @@ en:
     original_text: Original text
     translated_text: Translated text
     review_date: Review date
+    edit: Edit
+    destroy: Remove
+    errors:
+      unique: The original text should not be equal to the translated text
+      fail: Error
+    notice:
+      update: Card successfully updated
+      destroy: Card successfully deleted
+      create: Card successfully created

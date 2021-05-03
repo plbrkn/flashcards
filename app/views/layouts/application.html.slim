@@ -16,7 +16,10 @@ html
           li 
             a href=cards_path =t('all_cards') 
           li 
-            a href='#' =t('add_card')
-      
+            a href=new_card_path =t('add_card')
+
       section
         = yield
+      div class='flex justify-end'
+        - flash.each do |type, msg|
+          = content_tag(:div, msg)

@@ -4,6 +4,10 @@ FactoryBot.define do
   factory :card do
     original_text { 'some text' }
     translated_text { 'какой то текст' }
-    review_date { Time.current }
+
+    trait :invalid_card do
+      original_text { 'some text' }
+      translated_text { 'some text' }
+    end
   end
 end

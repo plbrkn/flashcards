@@ -37,6 +37,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'shoulda-matchers', '~> 4.0'
+  gem 'database_cleaner-active_record'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
