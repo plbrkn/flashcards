@@ -21,6 +21,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 5.0'
   gem 'factory_bot_rails'
+  
 end
 
 group :development do
@@ -30,6 +31,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
+  gem 'nokogiri'
+  gem 'open-uri'
 end
 
 group :test do
