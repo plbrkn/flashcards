@@ -13,8 +13,7 @@ class CardsController < ApplicationController
   end
 
   def check
-    @card = Card.find(params[:card_id])
-    if @card.check(params[:translated_text])
+    if CardAnswerService.call(params[:card_id], params[:translated_text])
       flash[:info] = t('cards.right')
     else
       flash[:warning] = t('cards.incorrectly')
