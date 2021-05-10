@@ -8,6 +8,20 @@ class CardsController < ApplicationController
     @cards = Card.all
   end
 
+  def home
+    @card = Card.random
+  end
+
+  def check
+    @card = Card.find(params[:card_id])
+    if @card.check(params[:translated_text])
+      flash[:info] = t('cards.right')
+    else
+      flash[:warning] = t('cards.incorrectly')
+    end
+    redirect_back(fallback_location: check_path)
+  end
+
   def show; end
 
   def new

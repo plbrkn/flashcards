@@ -17,3 +17,6 @@ en:
       update: Card successfully updated
       destroy: Card successfully deleted
       create: Card successfully created
+    right:  Right
+    incorrectly: Incorrectly
+    send: Send
