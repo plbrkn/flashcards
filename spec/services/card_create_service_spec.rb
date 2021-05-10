@@ -8,7 +8,7 @@ RSpec.describe CardCreateService do
                            translated_text: 'asdd')
   end
 
-  it 'incorrectly answer' do
+  it 'correct review_date' do
     expect(card.review_date.round).to eq((Time.current + 3.days).round)
   end
 end
