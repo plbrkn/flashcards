@@ -12,10 +12,6 @@ class Card < ApplicationRecord
     overdue_time.order('RANDOM()').take
   end
 
-  def check(answer)
-    update(review_date: DateTime.now.next_day(3)) if answer == translated_text
-  end
-
   def validate_not_equal
     return unless original_text && translated_text
 
