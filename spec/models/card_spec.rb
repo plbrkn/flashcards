@@ -25,4 +25,11 @@ RSpec.describe Card, type: :model do
         .is_at_least(1).is_at_most(128)
     }
   end
+
+  describe 'random' do
+    let!(:card) { create :card, :random_card }
+    it 'get random card' do
+      expect(Card.random).to eq card
+    end
+  end
 end
