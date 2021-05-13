@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'wellcome#wellcome'
+  root 'cards#home'
 
+  resources :card_check, only: :create
   resources :cards
 end

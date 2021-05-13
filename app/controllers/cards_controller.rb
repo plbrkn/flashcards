@@ -8,6 +8,10 @@ class CardsController < ApplicationController
     @cards = Card.all
   end
 
+  def home
+    @card = Card.random
+  end
+
   def show; end
 
   def new
