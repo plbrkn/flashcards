@@ -3,7 +3,6 @@
 Rails.application.routes.draw do
   root 'cards#home'
 
-  post 'check' => 'cards#check'
-
+  resources :card_check, only: :create
   resources :cards
 end

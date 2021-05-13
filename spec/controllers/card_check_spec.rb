@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe CardCheckController, type: :controller do
+  let(:card) { create :card }
+
+  describe 'POST #create' do
+    it 'equal translated_text' do
+      post :create, params: { card_id: card.id, translated_text: card.translated_text }
+      expect(flash[:info]).to eq I18n.t('cards.right')
+      expect(response).to redirect_to card_check_index_path
+    end
+
+    it 'unequal translated_text' do
+      post :create, params: { card_id: card.id, translated_text: card.original_text }
+      expect(flash[:warning]).to eq I18n.t('cards.incorrectly')
+      expect(response).to redirect_to card_check_index_path
+    end
+  end
+end

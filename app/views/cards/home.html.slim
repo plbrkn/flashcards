@@ -1,7 +1,7 @@
 div
    - if @card
      h2 =@card.original_text
-     =form_tag check_path(@card) do
+     =form_tag card_check_index_url(@card) do
        =hidden_field_tag(:card_id, @card.id)
        =text_field_tag :translated_text
        =submit_tag t('cards.send'), class: "btn btn-light"

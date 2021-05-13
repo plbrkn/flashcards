@@ -81,18 +81,4 @@ RSpec.describe CardsController, type: :controller do
       end.to change(Card, :count).by(0)
     end
   end
-
-  describe 'POST #check' do
-    it 'equal translated_text' do
-      post :check, params: { card_id: card.id, translated_text: card.translated_text }
-      expect(flash[:info]).to eq I18n.t('cards.right')
-      expect(response).to redirect_to check_path
-    end
-
-    it 'unequal translated_text' do
-      post :check, params: { card_id: card.id, translated_text: card.original_text }
-      expect(flash[:warning]).to eq I18n.t('cards.incorrectly')
-      expect(response).to redirect_to check_path
-    end
-  end
 end

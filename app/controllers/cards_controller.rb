@@ -12,15 +12,6 @@ class CardsController < ApplicationController
     @card = Card.random
   end
 
-  def check
-    if CardAnswerService.call(params[:card_id], params[:translated_text])
-      flash[:info] = t('cards.right')
-    else
-      flash[:warning] = t('cards.incorrectly')
-    end
-    redirect_back(fallback_location: check_path)
-  end
-
   def show; end
 
   def new
