@@ -28,6 +28,13 @@ RSpec.describe CardsController, type: :controller do
 
   describe 'POST #create' do
     it 'create valid card' do
+      allow(CardCreateService)
+        .to receive(:call)
+        .and_return(Card.new({ original_text: 'asd',
+                               translated_text: 'asdd' }))
+
+      expect(CardCreateService).to receive(:call)
+
       expect do
         post :create,
              params: { card: { original_text: 'asd',
@@ -36,6 +43,13 @@ RSpec.describe CardsController, type: :controller do
     end
 
     it 'create invalid card' do
+      allow(CardCreateService)
+        .to receive(:call)
+        .and_return(Card.new({ original_text: 'asd',
+                               translated_text: 'asd' }))
+
+      expect(CardCreateService).to receive(:call)
+
       expect do
         post :create,
              params: { card: { original_text: 'asd',
