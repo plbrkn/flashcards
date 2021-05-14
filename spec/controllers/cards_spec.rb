@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe CardsController, type: :controller do
-  let(:card) { create :card }
+  let(:user) { create :user }
+  let(:card) { create :card, user: user }
 
   describe 'GET #index' do
     it 'shows all cards' do
@@ -31,7 +32,7 @@ RSpec.describe CardsController, type: :controller do
       allow(CardCreateService)
         .to receive(:call)
         .and_return(Card.new({ original_text: 'asd',
-                               translated_text: 'asdd' }))
+                               translated_text: 'asdd', user_id: user.id }))
 
       expect(CardCreateService).to receive(:call)
 

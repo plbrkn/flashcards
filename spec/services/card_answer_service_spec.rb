@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 RSpec.describe CardAnswerService do
-  let(:card) { create :card }
+  let(:user) { create :user }
+  let(:card) { create :card, user: user }
 
   it 'correctly answer' do
     expect(CardAnswerService.call(card.id, card.translated_text)).to be_truthy
