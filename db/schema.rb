@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_514_135_645) do
+ActiveRecord::Schema.define(version: 20_210_515_111_214) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'cards', force: :cascade do |t|
-    t.text 'original_text', null: false
+    t.text 'original_text'
     t.text 'translated_text'
     t.datetime 'review_date'
     t.datetime 'created_at', precision: 6, null: false
@@ -27,10 +25,12 @@ ActiveRecord::Schema.define(version: 20_210_514_135_645) do
   end
 
   create_table 'users', force: :cascade do |t|
-    t.string 'email', null: false
-    t.string 'password', null: false
+    t.string 'email'
+    t.string 'crypted_password'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.string 'salt'
+    t.index ['email'], name: 'index_users_on_email', unique: true
   end
 
   add_foreign_key 'cards', 'users'
