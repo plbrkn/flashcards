@@ -4,6 +4,7 @@ require 'rails_helper'
 
 RSpec.describe CardCheckController, type: :feature do
   let(:card) { create :card }
+
   before(:each) do
     card.update(review_date: Time.current - 3.days)
   end

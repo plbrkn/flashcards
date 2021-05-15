@@ -4,6 +4,7 @@ FactoryBot.define do
   factory :card do
     original_text { 'some text' }
     translated_text { 'какой то текст' }
+    association :user
 
     trait :invalid_card do
       original_text { 'some text' }
