@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20_210_514_135_645) do
   enable_extension 'plpgsql'
 
   create_table 'cards', force: :cascade do |t|
-    t.text 'original_text'
+    t.text 'original_text', null: false
     t.text 'translated_text'
     t.datetime 'review_date'
     t.datetime 'created_at', precision: 6, null: false
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20_210_514_135_645) do
   end
 
   create_table 'users', force: :cascade do |t|
-    t.string 'email'
-    t.string 'password'
+    t.string 'email', null: false
+    t.string 'password', null: false
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
   end
