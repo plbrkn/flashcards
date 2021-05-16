@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :card_check, only: :create
   resources :cards
+  resources :users
 end

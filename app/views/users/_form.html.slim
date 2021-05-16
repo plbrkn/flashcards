@@ -1,0 +1,7 @@
+= simple_form_for @user, defaults: { wrapper_html: { class: 'flex flex-col' } } do |f|
+    =f.input :email, label: 'email'
+    =f.input :password, label: 'password'
+    =f.input :password_confirmation, label: 'password_confirmation'
+    =f.button :submit
+    
+
