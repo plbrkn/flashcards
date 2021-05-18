@@ -5,6 +5,10 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   let(:user) { create :user }
 
+  before do
+    login_user(user)
+  end
+
   describe 'GET #show' do
     it 'show user' do
       get :show, params: { id: user.id }

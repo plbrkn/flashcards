@@ -3,7 +3,12 @@
 require 'rails_helper'
 
 RSpec.describe CardCheckController, type: :controller do
-  let(:card) { create :card }
+  let(:user) { create :user }
+  let(:card) { create :card, user: user }
+
+  before do
+    login_user(user)
+  end
 
   describe 'POST #create' do
     it 'equal translated_text' do

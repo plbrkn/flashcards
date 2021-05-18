@@ -8,6 +8,11 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'support/factory_bot'
 require 'capybara/rails'
+require 'sorcery'
+
+RSpec.configure do |config|
+  config.include Sorcery::TestHelpers::Rails::Controller
+end
 
 begin
   ActiveRecord::Migration.maintain_test_schema!

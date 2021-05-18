@@ -4,7 +4,11 @@ require 'rails_helper'
 
 RSpec.describe CardsController, type: :controller do
   let(:user) { create :user }
-  let(:card) { create :card }
+  let(:card) { create :card, user: user }
+
+  before do
+    login_user(user)
+  end
 
   describe 'GET #index' do
     it 'shows all cards' do

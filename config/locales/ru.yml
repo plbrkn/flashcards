@@ -4,6 +4,16 @@ ru:
     welcome: Первый в мире удобный менеджер флеш-карточек. Именно так.
     all_cards: Все карточки
     add_card: Добавить карточку
+  user:
+    login: Войти
+    logout: Выйти
+    please_login: Необходимо войти в аккаунт
+    created: Аккаунт создан
+    updated: Аккаунт обновлен
+    edit: Изменить профиль
+    register: Регистрация
+    login_success: Успешный вход
+    login_unsuccess: Ошибка логина
   cards:
     original_text: Оригинал
     translated_text: Перевод
@@ -17,8 +27,6 @@ ru:
       update: Карточка обновлена
       destroy: Карточка удаленна
       create: Карточка создана
-    right:  Верно
+    right: Верно
     incorrectly: Не верно
     send: Отправить
-
-    

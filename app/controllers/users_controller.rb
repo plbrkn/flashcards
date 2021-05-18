@@ -4,6 +4,8 @@
 class UsersController < ApplicationController
   before_action :init_user, only: %i[show edit update]
 
+  skip_before_action :require_login, only: %i[index new create]
+
   def index
     @users = User.all
   end
@@ -18,7 +20,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to @user
+      auto_login(@user)
+      redirect_to @user, notice: t('user.created')
     else
       render :new
     end
@@ -28,7 +31,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to @user, notice: t('user.updated')
     else
       render :edit
     end
