@@ -17,6 +17,16 @@ html
             a href=cards_path =t('all_cards') 
           li 
             a href=new_card_path =t('add_card')
+          - if current_user
+            li
+              = link_to t('user.edit'), edit_user_path(current_user.id)
+            li
+              = link_to t('user.logut'), logout_path, method: :delete
+          - else
+            li
+              = link_to t('user.register'), new_user_path
+            li
+              = link_to t('user.login'), :login
 
       section
         = yield

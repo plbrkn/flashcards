@@ -5,21 +5,21 @@ class CardsController < ApplicationController
   before_action :init_card, only: %i[show edit update destroy]
 
   def index
-    @cards = Card.all
+    @cards = current_user.cards.all
   end
 
   def home
-    @card = Card.random
+    @card = current_user.cards.random
   end
 
   def show; end
 
   def new
-    @card = Card.new
+    @card = current_user.cards.build
   end
 
   def create
-    @card = CardCreateService.call(card_params)
+    @card = CardCreateService.call(current_user, card_params)
 
     if @card.save
       redirect_to @card
@@ -51,7 +51,7 @@ class CardsController < ApplicationController
   private
 
   def init_card
-    @card = Card.find(params[:id])
+    @card = current_user.cards.find_by(id: params[:id])
   end
 
   def card_params

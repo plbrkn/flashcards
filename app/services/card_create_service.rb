@@ -6,8 +6,8 @@ class CardCreateService < ApplicationService
 
   DAYS = 3.days
 
-  def initialize(card)
-    @card = Card.create(card.merge(review_date: Time.current + DAYS))
+  def initialize(current_user, card)
+    @card = current_user.cards.build(card.merge(review_date: Time.current + DAYS))
   end
 
   def call

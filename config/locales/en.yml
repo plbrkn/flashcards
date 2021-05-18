@@ -4,6 +4,16 @@ en:
     welcome: The world's first handy flash card manager. Exactly.
     all_cards: All cards
     add_card: Add card
+  user:
+    login: Login
+    logout: Logout
+    edit: Edit
+    created: User created
+    updated: User updated
+    please_login: Please login first
+    register: Register
+    login_success: Login Success
+    login_unsuccess: Login Unsuccess
   cards:
     original_text: Original text
     translated_text: Translated text
@@ -17,6 +27,6 @@ en:
       update: Card successfully updated
       destroy: Card successfully deleted
       create: Card successfully created
-    right:  Right
+    right: Right
     incorrectly: Incorrectly
     send: Send
